@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Topic from './components/Topic';
+import History from './components/history.jpeg'
+import Geography from './components/geography.webp'
+import ComputerScience from './components/compsci.jpeg'
+import Football from './components/football.jpeg'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1 className="welcome-title">Welcome to my blog-site!</h1>
+    <div className="topics">
+      <Topic title="History" image={History} />
+      <Topic title="Geography" image={Geography}/> 
+      <Topic title="Computer Science" image={ComputerScience}/> 
+      <Topic title="Football" image={Football}/> 
+    </div>
+
+    <div className='chatbot'>Chatbot...Coming soon...</div>
     </div>
   );
 }
