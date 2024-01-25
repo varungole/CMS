@@ -1,24 +1,30 @@
 import './App.css';
-import Topic from './components/Topic';
-import History from './components/history.jpeg'
-import Geography from './components/geography.webp'
-import ComputerScience from './components/compsci.jpeg'
-import Football from './components/football.jpeg'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Home from './components/Home';
+import WorldHistory from './components/WorldHistory'
+import Geography from './components/Geography'
+import ComputerScience from './components/ComputerScience'
+import Football from './components/Football'
+import Contribute from './components/Contribute';
+import Success from './components/Success';
 
 
 function App() {
   return (
-    <div className="App">
-    <h1 className="welcome-title">Welcome to my blog-site!</h1>
-    <div className="topics">
-      <Topic title="History" image={History} />
-      <Topic title="Geography" image={Geography}/> 
-      <Topic title="Computer Science" image={ComputerScience}/> 
-      <Topic title="Football" image={Football}/> 
-    </div>
 
-    <div className='chatbot'>Chatbot...Coming soon...</div>
-    </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/history' element={<WorldHistory />}></Route>
+        <Route path='/geography' element={<Geography />}></Route>
+        <Route path='/compsci' element={<ComputerScience/>}></Route>
+        <Route path='/football' element={<Football/>}></Route>
+        <Route path='/contribute' element={<Contribute />}></Route>
+        <Route path='/success' element={<Success />}></Route>
+      </Routes>
+      </BrowserRouter>
+   
+
   );
 }
 
